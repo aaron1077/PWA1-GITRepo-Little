@@ -45,22 +45,22 @@
             console.log(playerOneName+": "+playerOneHealth + " " + playerTwoName+":"+playerTwoHealth); //Printed to the console both players health and name after damage was taken
 
             //check for victor
-            var result = winnerCheck();
-            console.log(result);
-            if (result==="no winner")
+            var result = winnerCheck(); //Created variable result and set it equal to winnerCheck() which will check if there is a winner yet
+            console.log(result); //Printed the result
+            if (result==="no winner") //If statement with an argument result is equal to "no winner"
             {
-                round++;
-                alert(playerOneName+":"+playerOneHealth+"  *ROUND "+round+" OVER"+"*  "+playerTwoName+":"+playerTwoHealth);
+                round++; //Increment round
+                alert(playerOneName+":"+playerOneHealth+"  *ROUND "+round+" OVER"+"*  "+playerTwoName+":"+playerTwoHealth); //Alerted both players name and health and round over
 
-            } else{
-                alert(result);
-                break;
+            } else{ //else statement
+                alert(result); //Alert the result
+                break; //Break command is to break out of the loop if the fight ends before ten rounds
             };
 
           };
     };
 
-    function winnerCheck(){
+    function winnerCheck(){ 
         var result="no winner";
         if (playerOneHealth<1 && playerTwoHealth<1)
         {
