@@ -39,10 +39,10 @@
             var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2); //Created variable f2, used math.random to randomize the damage
 
             //inflict damage
-            playerOneHealth-=f1;
-            playerTwoHealth-=f2;
+            playerOneHealth-=f1; //playerOneHealth equals f1 minus playerOneHealth
+            playerTwoHealth-=f2; //playerTwoHealth equals f2 minus playerTwoHealth
 
-            console.log(playerOneName+": "+playerOneHealth + " " + playerTwoName+":"+playerTwoHealth);
+            console.log(playerOneName+": "+playerOneHealth + " " + playerTwoName+":"+playerTwoHealth); //Printed to the console both players health and name after damage was taken
 
             //check for victor
             var result = winnerCheck();
