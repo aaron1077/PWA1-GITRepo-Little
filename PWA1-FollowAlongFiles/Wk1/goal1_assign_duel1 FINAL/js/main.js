@@ -60,21 +60,21 @@
           };
     };
 
-    function winnerCheck(){ 
-        var result="no winner";
-        if (playerOneHealth<1 && playerTwoHealth<1)
+    function winnerCheck(){ //Created function winnerCheck
+        var result="no winner"; //Variable result is set to equal "no winner"
+        if (playerOneHealth<1 && playerTwoHealth<1) //if statement with arguments playerOneHealth<1 and playerTwoHealth<1
         {
-            result = "You Both Die";
-        } else if(playerOneHealth<1){
-            result =playerTwoName+" WINS!!!"
-        } else if (playerTwoHealth<1)
+            result = "You Both Die"; //Result "You Both Die"
+        } else if(playerOneHealth<1){ //Else if statement with argument playerOneHealth<1
+            result =playerTwoName+" WINS!!!" // result playerTwoNAme plus "WINS!!!"
+        } else if (playerTwoHealth<1) //Else if statement with argument playerTwoHealth<1
         {
-            result = playerOneName+" WINS!!!"
+            result = playerOneName+" WINS!!!" // result playerOneNAme plus "WINS!!!"
         };
-       return result;
+       return result; // Return result
     };
 
     /*******  The program gets started below *******/
-    fight();
+    fight(); //Call the function fight which starts the program
 
 })();
