@@ -26,17 +26,17 @@
     var playerTwoHealth = 100;//Created variable playerTwoHealth and set it equal to 100
 
     //initiate round
-    var round=0;
+    var round=0; //Created variable round and set it equal to 0
 
-    function fight(){
-        alert(playerOneName+":"+playerOneHealth+"  *START*  "+playerTwoName+":"+playerTwoHealth);
-        for (var i = 0; i < 10; i++)
+    function fight(){ //Created function fight
+        alert(playerOneName+":"+playerOneHealth+"  *START*  "+playerTwoName+":"+playerTwoHealth); //Alerted playerOneName, playerOneHealth, playerTwoName, playerTwoHealth, and start
+        for (var i = 0; i < 10; i++)//Created a for loop and variable i, used 3 arguments in the loop, i = 0, i<10, and i++
         {
             //random formula is - Math.floor(Math.random() * (max - min) + min);
-            var minDamage1 = player1Damage * .5;
-            var minDamage2 = player2Damage * .5;
-            var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1);
-            var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2);
+            var minDamage1 = player1Damage * .5; //Created variable minDamage1 and set it equal to player1Damage * .5
+            var minDamage2 = player2Damage * .5; //Created variable minDamage2 and set it equal to player2Damage * .5
+            var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1); //Created variable f1, used math.random to randomize the damage
+            var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2); //Created variable f2, used math.random to randomize the damage
 
             //inflict damage
             playerOneHealth-=f1;
