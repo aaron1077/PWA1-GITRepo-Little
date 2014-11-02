@@ -8,26 +8,25 @@
 	;
 	
 	// Validates search query
-	var validqte == function(query){
+	var validqte == function(query){ //Created variable validqte equal to function(query)
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){
-			query = query.substring(1, query.length);
+		while(query.charAt(0) = " "){ //while loop with argument checking where a charter is at
+			query = query.substring(1, query.length); //checking the substring and length of query
 		};
-		while(query.charAt(query.length-1) === ""){
-			query = query.substring(0, query.length-1);
-		;
+		while(query.charAt(query.length-1) === ""){ //while loop with argument length-1 is equal to ""
+			query = query.substring(0, query.length-1) //Query is equal to finding querys substring with argument of 0, and length-1
 		
 		// Check search length, must have 3 characters
-		if(query.length < 3){
-			alert("Your search query is too small, try again.);
+		if(query.length < 3){ //If statement with argument if query.length is < 3
+			alert("Your search query is too small, try again.); //If true alert the query is to small, try again
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
-			searchInput.focus();
-			return;
+			searchInput.focus(); //Setting focus to searchInput
+			return; //Return
 		};
 		
-		search(query);
+		search(query); //Search the query
 	};
 	
 	// Finds search matches
