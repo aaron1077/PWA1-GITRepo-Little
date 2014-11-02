@@ -63,29 +63,29 @@
 		results.sort(); //Sort the place of the array results and return array
 		
 		// Check that matches were found, and run output functions
-		if(results.length = 0){
-			noMatch();
-		}else{
-			showMatches(results);
+		if(results.length = 0){ //If statement checking for matches
+			noMatch(); //No match was found
+		}else{ //Else statement
+			showMatches(results); //Showing the results of the match
 		};
 	};
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
-	var noMatch = function(){
-		var html = ''+
-			'<p>No Results found.</p>'+
-			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'
+	var noMatch = function(){ //Variable noMatch is equal to a function
+		var html = ''+ //Variable html equals ' '
+			'<p>No Results found.</p>'+ //"No results found"
+			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'//"Try searching for 'JavaScript'. Just an idea." with a paragraph style
 		;
-		resultsDIV.innerHTML = html;
+		resultsDIV.innerHTML = html; //Modifying the html
 	};
 	
 	// Put matches into page as paragraphs with anchors
-	var showMatches = function(results){
+	var showMatches = function(results){ //Varaible showMatches equal to function(results)
 		
 		// THE NEXT 4 LINES ARE CORRECT.
-		var html = '<p>Results</p>', 
-			title, 
-			url
+		var html = '<p>Results</p>', //Variable html equal to "Results"
+			title, //title
+			url //Url
 		;
 		
 		// loop through all the results search() function
