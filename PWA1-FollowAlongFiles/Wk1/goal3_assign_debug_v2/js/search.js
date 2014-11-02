@@ -107,13 +107,13 @@
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
-	document.forms[0].onsubmit = function(){
-		var query = searchInput.value;
-		validqte(query);
+	document.forms[0].onsubmit = function(){ //will return a collection of all of the forms within a particular page
+		var query = searchInput.value; //Variable query equal to searching the data in the input
+		validqte(query); //validqte(query)
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
-		return false;
+		return false; //return false
 	;
 
 })();
