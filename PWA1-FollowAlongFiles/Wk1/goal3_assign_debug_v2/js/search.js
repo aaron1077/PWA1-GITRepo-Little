@@ -1,3 +1,7 @@
+//Patrick Little
+//November 2, 2014
+//AnalyzeBuggySearch Assignment
+
 // Create privatized scope using a self-executing function
 (function(){ //Creating a function
 	
