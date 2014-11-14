@@ -1,12 +1,12 @@
 //Patrick Little
-//November 2, 2014
-//AnalyzeBuggySearch Assignment
+//November 13, 2014
+//AnalyzeBuggySearch Assignment 3
 
 // Create privatized scope using a self-executing function
 (function(){ //Creating a function
 
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
-	var resultsDIV = document.getElementById("results"),//Created variable resultsDIV equal to document.getElementById results
+	var resultsDIV = document.getElementById("results"), //Created variable resultsDIV equal to document.getElementById results
 		searchInput = document.forms[0].search, // searchInput is equal to document.forms[0].search
 		currentSearch = '' //Searching for ''
 	;
@@ -39,7 +39,7 @@
 	var search = function(query){ //Variable search is equal to function(query)
 		
 		// split the user's search query string into an array
-		var queryArray = query.join(" "); //Variable Array equal to query.join(" ") splitting the query into an array
+		var queryArray = query.split(" "); //Variable Array equal to query.join(" ") splitting the query into an array //changed join to split
 		
 		// array to store matched results from database.js
 		var results = []; //Created array variable named results
@@ -50,12 +50,12 @@
             // each db[i] is a single video item, each title ends with a pipe "|"
             // save a lowercase variable of the video title
             var dbTitleEnd = db[i].indexOf('|'); //Variable dbTitleEnd, each title ends with a "|"
-            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd); //Variable dbitem equal to db[i] lowercase.substring title
+            var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd); //Variable dbitem equal to db[i] lowercase.substring title //fixed camel case on toLowerCase
 
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
             for (var ii = 0, jj = queryArray.length; ii < jj; ii++) { //For loop looping through users search query words with the arguments
-                var qitem = queryArray[ii].tolowercase(); //Variable qitem equal to saving a lowercase variable of the search keyword
+                var qitem = queryArray[ii].toLowerCase(); //Variable qitem equal to saving a lowercase variable of the search keyword //Fixed camel case on toLowerCase
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
@@ -72,7 +72,7 @@
 		results.sort(); //Sort the place of the array results and return array
 		
 		// Check that matches were found, and run output functions
-		if(results.length = 0){ //If statement checking for matches
+		if(results.length === 0){ //If statement checking for matches //changed = to ===
 			noMatch(); //No match was found
 		}else{ //Else statement
 			showMatches(results); //Showing the results of the match
@@ -103,7 +103,7 @@
 			// title of video ends with pipe
 			// pull the title's string using index numbers
 			titleEnd = results[i].indexOf('|'); //Title ends with '|'
-			title = results[i].subString(0, titleEnd); //Variable title, pulling the titles string with .substring using index numbers
+			title = results[i].substring(0, titleEnd); //Variable title, pulling the titles string with .substring using index numbers //changed subString to substring
 			
 			// pull the video url after the title
 			url = results[i].substring(results[i].indexOf('|')+1, results[i].length); //Getting the url
