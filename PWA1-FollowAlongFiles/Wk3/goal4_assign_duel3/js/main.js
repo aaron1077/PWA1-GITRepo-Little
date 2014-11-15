@@ -14,43 +14,43 @@
     console.log("FIGHT!!!"); //Printing to the console "FIGHT! ! !"
 
     //Define DOM pieces
-    var fighter1_txt = document.querySelector("#ww").querySelector("p"); //
-    var fighter2_txt = document.querySelector("#bw").querySelector("p"); //
-    var round_txt = document.querySelector("h5"); //
-    var button = document.getElementById("fight_btn"); //
+    var fighter1_txt = document.querySelector("#kabal").querySelector("p"); //Name kabal
+    var fighter2_txt = document.querySelector("#kratos").querySelector("p"); //Name kratos
+    var round_txt = document.querySelector("h5"); //h5 tag which says click to start fight
+    var button = document.getElementById("fight_btn"); //Fight button
 
     //Click Event
-    button.addEventListener("click", fight, false); //
+    button.addEventListener("click", fight, false); //button for click event
 
     var fighters = [
     {
-        name:"kabal", //
-        damage: 20, //
-        health: 100 //
+        name:"kabal", //array for variable fighters, this is the name for fighter 1
+        damage: 20, //array for variable fighters, this is the damage for fighter 1
+        health: 100 //array for variable fighters, this is the health for fighter 1
     },
     {
-        name:"Kratos", //
-        damage: 20, //
-        health: 100 //
+        name:"kratos", //array for variable fighters, this is the name for fighter 2
+        damage: 20, //array for variable fighters, this is the damage for fighter 2
+        health: 100 //array for variable fighters, this is the health for fighter 2
     }];
 
     //initiate round
     var round = 1; //Created variable round and set it equal to 0
 
     //Initialize DOM innerHTML text for top of HTML page
-    round_txt.innerHTML = "Click FIGHT BUTTON to Start!"; //
-    fighter1_txt.innerHTML = fighters[0].name + ":   " + fighters[0].health; //
-    fighter2_txt.innerHTML = fighters[1].name + ":   " + fighters[1].health; //
+    round_txt.innerHTML = "Click FIGHT BUTTON to Start!"; //innerHTML of round_txt
+    fighter1_txt.innerHTML = fighters[0].name + ":   " + fighters[0].health; //writing text on screen name and health
+    fighter2_txt.innerHTML = fighters[1].name + ":   " + fighters[1].health; //writing text on screen name and health
 
     function fight(){ //Created function fight
 
         //Alert fighters name and health
-        fighter1_txt.innerHTML = fighters[0].name + ":   " + fighters[0].health; //
-        fighter2_txt.innerHTML = fighters[1].name + ":   " + fighters[1].health; //
+        fighter1_txt.innerHTML = fighters[0].name + ":   " + fighters[0].health; //alert fighters name and health for fighter 1
+        fighter2_txt.innerHTML = fighters[1].name + ":   " + fighters[1].health; //alert fighters name and health for fighter 1
 
             //Determine Damage
-            var f1 = Math.floor(Math.random() * fighters[0].damage + fighters[0].damage *.5); //
-            var f2 = Math.floor(Math.random() * fighters[1].damage + fighters[1].damage *.5); //
+            var f1 = Math.floor(Math.random() * fighters[0].damage + fighters[0].damage *.5); //damage for fighter1
+            var f2 = Math.floor(Math.random() * fighters[1].damage + fighters[1].damage *.5); //damage for fighter2
 
 
             //inflict damage
@@ -62,21 +62,21 @@
             //check for winner
             var result = winnerCheck(); //Created variable result and set it equal to winnerCheck() which will check if there is a winner yet
             console.log(result); //Printed the result
-            round_txt.innerHTML = "ROUND #" + round + " Results:"; //
-            round++; //
+            round_txt.innerHTML = "ROUND #" + round + " Results:"; //the round number
+            round++; //increment the round
             if (result==="no winner") //If statement with an argument result is equal to "no winner"
             {
-                fighter1_txt.innerHTML = fighters[0].name + ": " + fighters[0].health; //
-                fighter2_txt.innerHTML = fighters[0].name + ": " + fighters[0].health; //
+                fighter1_txt.innerHTML = fighters[0].name + ": " + fighters[0].health; // fighter1 name and health
+                fighter2_txt.innerHTML = fighters[1].name + ": " + fighters[1].health; // fighter 2 name and health
 
             } else{ //else statement
-                fighter1_txt.innerHTML = result; //
-                fighter2_txt.innerHTML = ""; //
+                fighter1_txt.innerHTML = result; //result fighter1 innHTML
+                fighter2_txt.innerHTML = ""; //fighter 2 innerHTML
 
                 //Disable the button
-                button.removeEventListener("click", fight, false);
+                button.removeEventListener("click", fight, false); //disable button
 
-                document.querySelector ('.buttonblue').innerHTML = 'DONE!!!';
+                document.querySelector('.buttonblue').innerHTML = 'DONE!!!'; //query select buttonblue = to "done"
 
 
             }
